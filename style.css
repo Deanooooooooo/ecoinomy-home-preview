@@ -511,3 +511,6 @@ a.tr:hover b{color:var(--teal)}
 .bc .go{margin-top:18px;padding:16px 0 20px;border-top:1px solid var(--hair)}
 .bc.big .go{padding-bottom:24px}
 @media (hover:hover) and (pointer:fine){.bc:hover .stk .eco-lg{box-shadow:0 0 0 3px var(--tint),0 0 0 4px rgba(11,122,131,.25)}}
+.stk .eco-lg{border-radius:10px;background-size:contain;background-color:#fff}
+.stk .eco-lg+.eco-lg{margin-left:-6px}
+.bc.big .stk .eco-lg{border-radius:12px}
