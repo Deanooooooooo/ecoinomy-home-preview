@@ -514,3 +514,7 @@ a.tr:hover b{color:var(--teal)}
 .stk .eco-lg{border-radius:10px;background-size:contain;background-color:#fff}
 .stk .eco-lg+.eco-lg{margin-left:-6px}
 .bc.big .stk .eco-lg{border-radius:12px}
+.stk{gap:8px}
+.stk .eco-lg+.eco-lg{margin-left:0}
+.stk .eco-lg{box-shadow:0 0 0 1px rgba(15,38,56,.08)}
+.stk-n{display:none}
