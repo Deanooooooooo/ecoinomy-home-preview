@@ -328,3 +328,34 @@ a.tr:hover b{color:var(--teal)}
 .avs img:first-child,.sig img{background:linear-gradient(180deg,#e3f6f2,#bfe9df)}
 
 @media(max-width:1180px) and (min-width:861px){.ctas{flex-direction:column;align-items:flex-start}.ctas .btn{min-width:280px}}
+
+/* ===== v5 hover system (2026): no lift, no shadow bloom. Hairline border at rest; on hover the border takes the
+   brand colour, the surface gets a faint tint, a soft spotlight follows the cursor, and only the arrow moves. ===== */
+:root{--hair:rgba(15,38,56,.09);--hair-h:rgba(11,122,131,.5);--tint:#f6fbfa}
+.bc,.gd-c,.steps li,.upd a,.cmp-c{box-shadow:none;border:1px solid var(--hair);transition:border-color .18s ease-out,background-color .18s ease-out}
+.bc,.gd-c{position:relative;overflow:hidden;isolation:isolate}
+.bc::before,.gd-c::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease-out;pointer-events:none;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(42,165,160,.10),transparent 60%)}
+.bc.big{border-color:rgba(11,122,131,.18)}
+.pills a,.who-l a,.all,.btn-s,.lang summary{transition:border-color .18s ease-out,color .18s ease-out,background-color .18s ease-out}
+/* neutralise the old lift */
+.bc:hover,.gd-c:hover,.upd a:hover,.pills a:hover,.btn-p:hover{transform:none}
+.bc:hover,.gd-c:hover,.upd a:hover{box-shadow:none}
+.btn-p:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 24px rgba(14,47,68,.25)}
+@media (hover:hover) and (pointer:fine){
+  .bc:hover,.gd-c:hover,.upd a:hover{border-color:var(--hair-h);background-color:var(--tint)}
+  .bc.big:hover{background:linear-gradient(160deg,#eef8f6 0%,var(--tint) 55%)}
+  .bc:hover::before,.gd-c:hover::before{opacity:1}
+  .bc:hover h3,.gd-c:hover h3,.upd a:hover .u-t{color:var(--teal-d)}
+  .bc .go i{transition:transform .2s ease-out,background-color .18s,color .18s}
+  .bc:hover .go i{transform:translateX(4px);background:var(--teal);color:#fff}
+  .gd-c:hover .read svg,.upd a:hover>svg{transform:translateX(4px);color:var(--teal)}
+  .upd a>svg,.read svg{transition:transform .2s ease-out,color .18s}
+  .pills a:hover{border-color:var(--teal);color:var(--teal-d);background:var(--tint)}
+  .btn-p:hover{background:#0a2536}
+  .btn-p:hover svg{transform:translateX(4px)}
+  .nav a:hover{background:#eef4f4}
+}
+/* keyboard focus = hover */
+.bc:focus-visible,.gd-c:focus-visible,.upd a:focus-visible{border-color:var(--hair-h);background-color:var(--tint);outline:2px solid #7fd1c8;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*,*::before{transition:none!important}}
