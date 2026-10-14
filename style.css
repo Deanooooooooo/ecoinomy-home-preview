@@ -484,7 +484,7 @@ a.tr:hover b{color:var(--teal)}
 .hero-media img{min-height:0}
 @media(min-width:861px){
   .hero-in{min-height:0}
-  .hero-media{height:clamp(540px,44vw,640px)}
+  .hero-media{height:clamp(520px,41vw,600px)}
   .hero-copy{display:flex;flex-direction:column;justify-content:space-between;padding:6px 0}
   .hc-mid .lead{margin-top:0}
   .lead{margin-bottom:30px}
