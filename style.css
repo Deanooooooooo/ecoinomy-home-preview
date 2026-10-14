@@ -521,3 +521,5 @@ a.tr:hover b{color:var(--teal)}
 
 .hero h1 span{white-space:normal}
 .hero-copy,.hero-media{min-width:0}
+
+@media(min-width:861px){.hero-media{height:auto;min-height:clamp(520px,41vw,600px)}}
